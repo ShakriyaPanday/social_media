@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:social_media_ui/screens/home_screen.dart';
 import 'package:social_media_ui/widgets/cureve_clipper.dart';
 
 class LoginPage extends StatefulWidget {
@@ -77,7 +78,10 @@ class _LoginPageState extends State<LoginPage> {
                 height: 40.0,
               ),
               GestureDetector(
-                onTap: (() {}),
+                onTap: (() {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: ((context) => HomePage())));
+                }),
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 60.0),
                   alignment: Alignment.center,

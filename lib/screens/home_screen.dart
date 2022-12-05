@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
-      body: ListView(children: [
+      body: ListView(physics: const BouncingScrollPhysics(), children: [
         const Padding(
           padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
           child: Text(

@@ -79,8 +79,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: (() {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: ((context) => HomePage())));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => const HomePage())));
                 }),
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 60.0),

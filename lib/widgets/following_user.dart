@@ -7,7 +7,7 @@ class FollowingUser extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 80.0,
       child: ListView.builder(
         padding: const EdgeInsets.only(left: 10.0),

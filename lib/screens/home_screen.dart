@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:social_media_ui/data/data.dart';
-import 'package:social_media_ui/models/user_model.dart';
 import 'package:social_media_ui/widgets/following_user.dart';
+import 'package:social_media_ui/widgets/post_carousel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,10 +13,12 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>
     with SingleTickerProviderStateMixin {
   late TabController _tabController;
+  late PageController _pageController;
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
+    _pageController = PageController(initialPage: 0, viewportFraction: 0.8);
   }
 
   @override
@@ -42,18 +44,18 @@ class _HomePageState extends State<HomePage>
           controller: _tabController,
           tabs: const [
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 10.0),
               child: Text("Trending"),
             ),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.fromLTRB(10.0, 15.0, 10.0, 10.0),
               child: Text("Latest"),
             ),
           ],
         ),
       ),
-      body: ListView(children: const [
-        Padding(
+      body: ListView(children: [
+        const Padding(
           padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),
           child: Text(
             "Following",
@@ -64,7 +66,9 @@ class _HomePageState extends State<HomePage>
             ),
           ),
         ),
-        FollowingUser()
+        const FollowingUser(),
+        PageCarousel(
+            pageController: _pageController, title: "Posts", posts: posts)
       ]),
     );
   }

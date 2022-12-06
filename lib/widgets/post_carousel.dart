@@ -139,6 +139,7 @@ class PageCarousel extends StatelessWidget {
         SizedBox(
           height: 400.0,
           child: PageView.builder(
+              physics: const BouncingScrollPhysics(),
               controller: pageController,
               itemCount: posts.length,
               itemBuilder: ((context, index) {

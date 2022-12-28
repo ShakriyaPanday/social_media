@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:social_media_ui/data/data.dart';
+import 'package:social_media_ui/widgets/custom_drawer.dart';
 import 'package:social_media_ui/widgets/following_user.dart';
 import 'package:social_media_ui/widgets/post_carousel.dart';
 
@@ -26,6 +27,7 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
         centerTitle: true,
         title: Text(
           "FRENZY",
@@ -54,6 +56,7 @@ class _HomePageState extends State<HomePage>
           ],
         ),
       ),
+      drawer: const CustomDrawer(),
       body: ListView(physics: const BouncingScrollPhysics(), children: [
         const Padding(
           padding: EdgeInsets.fromLTRB(20.0, 20.0, 20.0, 10.0),

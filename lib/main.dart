@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'Social Media',
       theme: ThemeData(
         primaryColor: Colors.blue,
+        primarySwatch: Colors.blue,
       ),
       home: const LoginPage(),
     );
